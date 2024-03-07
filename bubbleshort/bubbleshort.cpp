@@ -3,22 +3,19 @@
 
 #include <iostream>
 using namespace std;
-int main()
-{
 
-}
 
 int a[20];      // Deklarasi array a dengan ukuran 20
 int n;          // Deklarasi variabel n untuk menyimpan banyaknya elemen pada array
 
 void input() {          // Procedure untuk input
     while (true) {      // Looping
-        cout << "Masukan banyaknya elemen pada array : ";   // Output ke layar
+        cout << "Masukan banyaknya elemen pada array :";   // Output ke layar
         cin >> n;       // Input dari pengguna
         if (n <= 20)    // Jika n kurang dari atau sama dengan 20
             break;      // Keluar dari loop
         else {          // Jika n lebih dari 20
-            cout << "\nArray dapat mempunyai maksimal 20 elemen.\n"; // Output ke layar
+            cout << "\nArray dapat mempunyai maksimal 20 elemen. \n"; // Output ke layar
         }
     }
 
@@ -28,7 +25,7 @@ void input() {          // Procedure untuk input
     cout << "===================" << endl;
 
     for (int i = 0; i < n; i++) {   //Looping dengan i dimulai dari 0 hingga n-1
-        cout << "data ke-" << (i = 1) << "; "; // Output ke layar
+        cout << "data ke-" << (i + 1) << "; "; // Output ke layar
         cin >> a[i];            // Input dari pengguna
     }
 }
@@ -52,11 +49,17 @@ void bubbleSortArray() {            // Prosedur untuk mengurutkan array dengan m
         for (int j = 0; j <= n - 1 - pass; j++) {   // Looping dengan j dimulai dari 0 hingga n-1
             if (a[j] > a[j + 1]) {          // Jika nilai pada a[j] lebih besar dari a[j+1]
                 int temp = a[j];            // Simpan nilai a[] ke variabel sementara temp
-                a[j] = a[j = 1];            // Assign nilai a[j+1] ke a[j]
+                a[j] = a[j + 1];            // Assign nilai a[j+1] ke a[j]
                 a[j + 1] = temp;            // Assign nilai temp ke a[j+1]
             }
         }
     }
 }
 
+int main() {
+    input();        // Memanggil read()
+    bubbleSortArray(); // Memanggil bubblesortarray ()
+    display();      // Memanggil display()
+    return 0;
+}
 
